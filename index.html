@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles-extra.css" />
   <link rel="stylesheet" href="transport.css" />
   <link rel="stylesheet" href="saved-places.css" />
+  <link rel="stylesheet" href="schedule-edit.css" />
 </head>
 <body>
   <div class="grain"></div>
@@ -159,6 +160,22 @@
   </main>
   <footer><span>東京 · JULY 10—15, 2026</span><span>Have a beautiful trip.</span></footer>
   <div class="toast" id="toast"></div>
+  <div class="sheet-backdrop" id="scheduleBackdrop"></div>
+  <section class="schedule-sheet" id="scheduleSheet" role="dialog" aria-modal="true" aria-labelledby="scheduleSheetTitle">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head"><div><small id="sheetDayLabel">JUL 10</small><h2 id="scheduleSheetTitle">新增行程</h2></div><button type="button" id="closeScheduleSheet" aria-label="關閉">×</button></div>
+    <form id="scheduleForm">
+      <input type="hidden" id="scheduleEditIndex" value="">
+      <div class="sheet-grid">
+        <label><span>時間</span><input type="time" id="scheduleTime" required></label>
+        <label><span>類型</span><select id="scheduleTag"><option>景點</option><option>餐廳</option><option>購物</option><option>咖啡</option><option>交通</option><option>預約</option><option>自由行程</option></select></label>
+      </div>
+      <label><span>行程名稱</span><input type="text" id="scheduleName" required placeholder="例如：逛銀座、吃拉麵"></label>
+      <label><span>Google Maps 地點</span><input type="text" id="schedulePlace" placeholder="店名、景點名稱或地址"></label>
+      <label><span>備註</span><textarea id="scheduleNote" rows="3" placeholder="訂位資訊、集合地點、想買的東西…"></textarea></label>
+      <div class="sheet-actions"><button type="button" class="sheet-cancel" id="cancelSchedule">取消</button><button type="submit" class="sheet-save">儲存行程</button></div>
+    </form>
+  </section>
   <script src="app.js"></script>
 </body>
 </html>
