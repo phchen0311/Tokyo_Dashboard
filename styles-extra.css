@@ -1,0 +1,16 @@
+.choice-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.choice-btn{border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px 10px;font:600 10px "DM Sans";cursor:pointer;border-radius:20px}
+.choice-btn:hover,.choice-btn.selected{background:var(--ink);border-color:var(--ink);color:white}
+.choice-btn:after{content:' ↗';color:var(--orange)}
+.add-item-form{margin-top:24px;padding:22px;background:var(--cream);border:1px solid var(--line)}
+.add-form-title{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.add-form-title>span{width:30px;height:30px;border-radius:50%;background:var(--orange);color:white;display:grid;place-items:center;font-size:18px}
+.add-form-title b,.add-form-title small{display:block}
+.add-form-title small{font-size:10px;color:var(--muted);margin-top:2px}
+.add-form-fields{display:grid;grid-template-columns:1.15fr 1fr .65fr auto;gap:10px;align-items:end}
+.add-form-fields label span{display:block;font-size:8px;letter-spacing:.14em;font-weight:700;margin-bottom:6px}
+.add-form-fields input{width:100%;border:1px solid var(--line);background:white;padding:11px;font:12px "DM Sans";color:var(--ink);outline:none}
+.add-form-fields input:focus{border-color:var(--orange)}
+.add-form-fields button{border:0;background:var(--ink);color:white;padding:12px 14px;font:600 11px "DM Sans";cursor:pointer;white-space:nowrap}
+@media(max-width:900px){.add-form-fields{grid-template-columns:1fr 1fr}.add-form-fields button{height:39px}}
+@media(max-width:600px){.add-form-fields{grid-template-columns:1fr}.add-form-fields button{width:100%}}

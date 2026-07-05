@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#163a34" />
+  <title>Tokyo Field Notes · July 10–15</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-extra.css" />
+  <link rel="stylesheet" href="transport.css" />
+  <link rel="stylesheet" href="saved-places.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">東</span><span>Tokyo Field Notes</span></a>
+    <nav><a href="#itinerary">Itinerary</a><a href="#transport">Transport</a><a href="#shopping">Shopping</a><a href="#flight">Flights</a></nav>
+    <div class="status"><span></span><b id="tokyoClock">Tokyo · --:--</b></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">SUMMER 2026 · 6 DAYS</p>
+        <h1>Tokyo,<br><em>your way.</em></h1>
+        <p class="lede">A pocket command center for good shoes, great coffee, and never missing the last train.</p>
+        <div class="hero-actions">
+          <button class="primary" data-scroll="#itinerary">View today’s plan <span>↘</span></button>
+          <a class="text-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=ART+HOTEL+Nippori+Lungwood">Hotel directions ↗</a>
+        </div>
+      </div>
+      <div class="hero-side">
+        <article class="trip-card">
+          <p class="label">YOUR BASE</p>
+          <div class="hotel-title"><span>泊</span><div><h2>ART HOTEL</h2><p>Nippori Lungwood</p></div></div>
+          <div class="mini-map"><div class="map-lines"></div><div class="pin">●</div><b>NIPPORI</b><small>荒川区 · TOKYO</small></div>
+          <div class="hotel-meta"><span>1 min to station</span><span>Skyliner direct</span></div>
+        </article>
+        <article class="weather-card">
+          <div><p class="label">TOKYO WEATHER</p><h3 id="weatherTemp">--°</h3><p id="weatherText">Fetching forecast…</p></div>
+          <div class="weather-icon" id="weatherIcon">☀</div>
+          <div class="weather-advice" id="weatherAdvice">Live daily guidance will appear here.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="quick-strip" aria-label="Trip summary">
+      <div><small>OUTBOUND</small><b>JX802</b><span>10:40 TPE → 15:05 NRT</span></div>
+      <div><small>CHECK-IN</small><b>JUL 10</b><span>Nippori · Tokyo</span></div>
+      <div><small>RETURN</small><b>JX805</b><span>20:40 NRT → 23:20 TPE</span></div>
+      <div class="countdown"><small>DEPARTING IN</small><b id="tripCountdown">—</b><span id="countdownLabel">July 10, 2026</span></div>
+    </section>
+
+    <section class="itinerary section" id="itinerary">
+      <div class="section-head"><div><p class="eyebrow">YOUR ITINERARY</p><h2>Six days, <em>well spent.</em></h2></div><p>Choose a day to reveal the route, live weather, and the smart way to get around.</p></div>
+      <div class="day-tabs" id="dayTabs"></div>
+      <div class="day-layout">
+        <div class="timeline" id="timeline"></div>
+        <aside class="route-panel">
+          <div class="route-map"><iframe id="mapFrame" title="Selected place on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><div class="map-overlay"><small>SELECTED STOP</small><b id="mapPlace">Tokyo</b></div></div>
+          <div class="transport-card"><span class="transport-icon">電</span><div><small>BEST ROUTE</small><h3 id="routeTitle">Yamanote Line</h3><p id="routeText">Fast, frequent, and covered by IC card.</p></div><a id="routeLink" target="_blank" aria-label="Open route in Google Maps">↗</a></div>
+          <div class="weather-detail"><div><small>DAY FORECAST</small><b id="dayWeather">Loading…</b></div><p id="dayAdvice">Checking Tokyo’s forecast.</p></div>
+        </aside>
+      </div>
+      <div class="saved-places-panel">
+        <div class="saved-panel-head"><div><p class="eyebrow">YOUR GOOGLE MAP</p><h3>Saved-place constellation</h3></div><div><b>35</b><span>saved pins reviewed</span></div><a target="_blank" href="https://maps.app.goo.gl/UagjFVZ5kETQmrPi7">Open original list ↗</a></div>
+        <div class="saved-groups">
+          <div class="saved-group"><div class="area-tag shibuya">01</div><div><h4>Shibuya · Harajuku</h4><p>Best paired with Saturday</p><div class="place-chips"><button data-saved-place="Meiji Jingu">Meiji Shrine</button><button data-saved-place="Hachiko Memorial Statue">Hachiko</button><button data-saved-place="Miyashita Park">Miyashita Park</button><button data-saved-place="Onitsuka Tiger Shibuya 1">Onitsuka Tiger</button><button data-saved-place="adidas Brand Center Shibuya">adidas</button><button data-saved-place="ballaholic TOKYO">ballaholic</button><button data-saved-place="Fuglen Tokyo">Fuglen Tokyo</button><button data-saved-place="AFURI Shibuya Dogenzaka">AFURI</button><button data-saved-place="挽肉と米 渋谷">挽肉と米</button><button data-saved-place="Roast Beef Ohno Harajuku">Roast Beef Ohno</button></div></div></div>
+          <div class="saved-group"><div class="area-tag shinjuku">02</div><div><h4>Shinjuku</h4><p>Sunday’s compact sports stop</p><div class="place-chips"><button data-saved-place="Victoria Golf Shinjuku">Victoria Golf</button><button data-saved-place="塚田農場 新宿東口駅前店">Tsukada Farm</button></div></div></div>
+          <div class="saved-group"><div class="area-tag east">03</div><div><h4>Asakusa · Ueno · Nippori</h4><p>Best paired with Monday or the final morning</p><div class="place-chips"><button data-saved-place="Ameyoko Shopping District">Ameyoko</button><button data-saved-place="Sensoji Temple">Sensō-ji / Kaminarimon</button><button data-saved-place="Asakusa Rockza">Asakusa Rockza</button><button data-saved-place="Namiki Yabusoba">Namiki Yabusoba</button><button data-saved-place="Kameya Tokyo">Kameya</button><button data-saved-place="MUSECA TIMES Tokyo">MUSECA TIMES</button><button data-saved-place="Senriko Ueno">Senriko Ueno</button><button data-saved-place="牛骨ラーメン 磯川 上野店">磯川 ramen</button><button data-saved-place="一頭牛焼肉 房家 東京">房家 yakiniku</button></div></div></div>
+          <div class="saved-group"><div class="area-tag central">04</div><div><h4>Central Tokyo · Ginza</h4><p>Flexible backups—not forced into a busy day</p><div class="place-chips"><button data-saved-place="Tsukiji Outer Market">Tsukiji Market</button><button data-saved-place="Nemuro Hanamaru Ginza">Nemuro Hanamaru</button><button data-saved-place="AFURI Yurakucho">AFURI Yurakucho</button><button data-saved-place="鳴門鯛焼本舗 新橋駅前店">Naruto Taiyaki</button><button data-saved-place="Naniwaya Sohonten">Naniwaya Taiyaki</button><button data-saved-place="I'm donut gluten free vegan Tokyo">I'm donut?</button><button data-saved-place="Torikizoku Tokyo Yaesu">Torikizoku Yaesu</button><button data-saved-place="Tokyo Tower">Tokyo Tower</button></div></div></div>
+          <div class="saved-group"><div class="area-tag night">05</div><div><h4>Views · Nightlife</h4><p>Optional evening swaps</p><div class="place-chips"><button data-saved-place="Tokyo Skytree">Tokyo Skytree</button><button data-saved-place="Rokusan Angel Roppongi">Rokusan Angel</button><button data-saved-place="Burlesque Annex YAVAY">Burlesque Annex YAVAY</button></div></div></div>
+        </div>
+        <p class="saved-note">Three overlapping Asakusa pins were consolidated into Sensō-ji / Kaminarimon. The hotel is already treated as your route origin throughout the dashboard.</p>
+      </div>
+    </section>
+
+    <section class="transport-section section" id="transport">
+      <div class="section-head"><div><p class="eyebrow">JP TRANSPORTATION</p><h2>Move like a <em>local.</em></h2></div><p>Tap with Suica or PASMO for city rides. Skyliner needs a separate reserved-seat ticket in addition to the base fare.</p></div>
+      <div class="transport-grid">
+        <div class="network-card">
+          <div class="network-head"><div><small>YOUR TOKYO NETWORK</small><b>Trip route map</b></div><div class="line-key"><span><i class="key-skyliner"></i>Skyliner</span><span><i class="key-jr"></i>JR Yamanote</span><span><i class="key-ginza"></i>Ginza Line</span></div></div>
+          <div class="network-map" aria-label="Simplified rail map for this Tokyo itinerary">
+            <div class="rail-line skyliner-line"><span class="station major"><i>NRT</i><b>Narita T2</b></span><span class="station major"><i>KS02</i><b>Nippori</b><small>Hotel base</small></span></div>
+            <div class="rail-line jr-line"><span class="station"><i>JY07</i><b>Nippori</b></span><span class="station"><i>JY05</i><b>Ueno</b></span><span class="station"><i>JY29</i><b>Shinbashi</b></span><span class="station"><i>JY17</i><b>Shinjuku</b></span><span class="station"><i>JY20</i><b>Shibuya</b></span></div>
+            <div class="rail-line ginza-line"><span class="station"><i>G08</i><b>Shinbashi</b></span><span class="station"><i>G16</i><b>Ueno</b></span><span class="station"><i>G19</i><b>Asakusa</b></span></div>
+          </div>
+          <div class="map-tip"><span>乗</span><p><b>Nippori is your anchor.</b> Use the green JR loop for Shibuya and Shinjuku; change to the orange Ginza Line for Asakusa.</p><a target="_blank" href="https://www.tokyometro.jp/en/subwaymap/index.html">Full official metro map ↗</a></div>
+        </div>
+        <aside class="fare-summary">
+          <p class="label">QUICK BUDGET</p><h3>About <em>¥6,600</em></h3><p>Estimated rail spend for the planned city rides plus two Skyliner trips. Your Klook tour includes hotel pickup.</p>
+          <div class="ic-card"><span>IC</span><div><b>Suica / PASMO</b><small>Load around ¥3,000 for city travel</small></div></div>
+          <ul><li><span>City ride</span><b>¥178–¥252</b></li><li><span>Skyliner one way</span><b>¥2,470</b></li><li><span>Metro day ticket</span><b>Usually not needed</b></li></ul>
+        </aside>
+      </div>
+      <div class="luup-card">
+        <div class="luup-brand"><span>L</span><div><small>SHORT-HOP OPTION</small><h3>LUUP</h3><p>E-bike or e-scooter sharing</p></div></div>
+        <div class="luup-price"><small>TOKYO STANDARD FARE</small><b>¥50 <em>+</em> ¥20/min</b><span>Both vehicle types · verify in app before starting</span></div>
+        <div class="luup-uses">
+          <div><b>10 min</b><span>≈ ¥250</span><small>Short neighborhood hop</small></div>
+          <div><b>15 min</b><span>≈ ¥350</span><small>Asakusa ↔ Ueno area</small></div>
+          <div><b>20 min</b><span>≈ ¥450</span><small>Only if weather is dry</small></div>
+        </div>
+        <div class="luup-advice"><b>Our pick: choose the e-bike.</b><p>More stable with shopping bags and easier on unfamiliar streets. Use LUUP for relaxed daytime hops around Asakusa/Ueno or Yanaka—not Shibuya crossings, airport transfers, rain, or after drinking.</p><a target="_blank" href="https://luup.sc/en/service-en/">LUUP guide ↗</a></div>
+        <div class="luup-setup"><span>01 <b>Install app</b></span><span>02 <b>Add card + SMS</b></span><span>03 <b>Find two ports</b></span><span>04 <b>Reserve & scan</b></span></div>
+        <p class="luup-rule"><strong>For e-scooters:</strong> you must be 16+, submit age verification, and pass the in-app traffic-rules test. Ride on the left side of the roadway or permitted cycle lane; ordinary sidewalk riding and two-person riding are prohibited. Helmet use is strongly recommended.</p>
+      </div>
+      <div class="journey-table">
+        <div class="journey-row journey-header"><span>DAY</span><span>RECOMMENDED ROUTE</span><span>TIME</span><span>FARE / PERSON</span><span></span></div>
+        <div class="journey-row"><b>7/10</b><div><span class="route-badge sky">KS</span><strong>Narita T2 → Nippori</strong><small>Keisei Skyliner · reserved seat</small></div><span>36–40 min</span><b>¥2,470</b><a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Narita+Airport+Terminal+2&destination=Nippori+Station&travelmode=transit">↗</a></div>
+        <div class="journey-row"><b>7/11</b><div><span class="route-badge jr">JY</span><strong>Nippori ↔ Shibuya</strong><small>JR Yamanote Line · direct</small></div><span>33 min each way</span><b>≈ ¥460 return</b><a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Nippori+Station&destination=Shibuya+Station&travelmode=transit">↗</a></div>
+        <div class="journey-row"><b>7/12</b><div><span class="route-badge jr">JY</span><strong>Nippori ↔ Shinjuku</strong><small>JR Yamanote Line · direct</small></div><span>22–25 min each way</span><b>≈ ¥420 return</b><a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Nippori+Station&destination=Shinjuku+Station&travelmode=transit">↗</a></div>
+        <div class="journey-row"><b>7/13</b><div><span class="route-badge jr">JY</span><span class="route-badge g">G</span><strong>Nippori → Shinbashi → Asakusa</strong><small>Yamanote, then Ginza Line</small></div><span>≈ 45 min total</span><b>≈ ¥420</b><a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Nippori+Station&destination=Asakusa+Station&waypoints=Shimbashi+Station&travelmode=transit">↗</a></div>
+        <div class="journey-row"><b>7/14</b><div><span class="route-badge sky">✓</span><strong>Pickup at your hotel</strong><small>Meet the Klook guide in the lobby</small></div><span>Arrive 10–15 min early</span><b>Included · ¥0</b><a href="#itinerary">↗</a></div>
+        <div class="journey-row"><b>7/15</b><div><span class="route-badge sky">KS</span><strong>Nippori → Narita T2</strong><small>Skyliner · leave around 16:45</small></div><span>36–40 min</span><b>¥2,470</b><a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Nippori+Station&destination=Narita+Airport+Terminal+2&travelmode=transit">↗</a></div>
+      </div>
+      <p class="fare-note">Fares shown are adult estimates as of July 2026; exact IC fare may vary by selected route. Always follow the live route and platform shown in Google Maps or station signage.</p>
+    </section>
+
+    <section class="shopping section" id="shopping">
+      <div class="section-head"><div><p class="eyebrow">THE SHOPPING EDIT</p><h2>Buy smart. <em>Pack lighter.</em></h2></div><p>Compare prices in both currencies. Your list is saved automatically on this device.</p></div>
+      <div class="shopping-grid">
+        <div class="shop-list-card">
+          <div class="card-head"><div><b>Shopping checklist</b><span id="checkProgress">0 of 0 found</span></div><button class="icon-btn" id="addItem" title="Add item">＋</button></div>
+          <div id="shoppingList"></div>
+          <form class="add-item-form" id="addItemForm">
+            <div class="add-form-title"><span>＋</span><div><b>Add your own item</b><small>Build the list as you browse</small></div></div>
+            <div class="add-form-fields">
+              <label><span>ITEM</span><input id="newItemName" required placeholder="e.g. Golf glove"></label>
+              <label><span>STORE / AREA</span><input id="newItemStore" placeholder="e.g. Victoria Golf"></label>
+              <label><span>BUDGET ¥</span><input id="newItemPrice" type="number" min="0" placeholder="5000"></label>
+              <button type="submit">Add to list <span>＋</span></button>
+            </div>
+          </form>
+        </div>
+        <aside class="tax-card">
+          <div class="tax-seal">免税<small>TAX FREE</small></div>
+          <p class="label">JULY 2026 RULE</p>
+          <h3>Show your passport.<br><em>Save up to 10%.</em></h3>
+          <p>Spend at least <b>¥5,000 before tax</b> at the same participating store on the same day. The new airport-refund system does not begin until November 1, 2026.</p>
+          <ul><li>Carry your physical passport</li><li>Ask “Tax-free?” before paying</li><li>Keep receipts and goods for departure</li></ul>
+          <a target="_blank" href="https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00028.html">Official visitor guidance ↗</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="flight section" id="flight">
+      <div class="flight-copy"><p class="eyebrow">FLIGHT DESK</p><h2>Home, with <em>room to spare.</em></h2><p>JX805 departs Narita Terminal 2 at 20:40. Leave the hotel by 16:45 for a calm Skyliner ride and generous airport buffer.</p><button class="primary light" id="notifyBtn">Enable boarding reminders <span>↗</span></button><small id="notifyStatus">Reminders work while this dashboard is open.</small></div>
+      <div class="boarding-pass">
+        <div class="bp-top"><span>STARLUX</span><b>BOARDING PASS</b></div>
+        <div class="bp-route"><div><small>FROM</small><b>NRT</b><span>Tokyo</span></div><div class="plane-line">✈</div><div><small>TO</small><b>TPE</b><span>Taipei</span></div></div>
+        <div class="bp-meta"><div><small>FLIGHT</small><b>JX805</b></div><div><small>DATE</small><b>15 JUL</b></div><div><small>DEPART</small><b>20:40</b></div><div><small>TERMINAL</small><b>T2</b></div></div>
+        <div class="barcode">▌▐▌▌▐▐▌▐▌▌▐▐▌▌▐▌▐▐▌▌▐▌▐▌▌</div>
+      </div>
+    </section>
+  </main>
+  <footer><span>東京 · JULY 10—15, 2026</span><span>Have a beautiful trip.</span></footer>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
